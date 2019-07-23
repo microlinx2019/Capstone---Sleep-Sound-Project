@@ -1,0 +1,109 @@
+Menu:
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Menu : MonoBehaviour
+{
+    public GameObject subMenuParent;
+    public GameObject submMnuPrefab;
+    private object subMenuPrefab;
+
+    public void Awake()
+    {
+        subMenuParent = Instantiate(subMenuPrefab);
+        subMenuParent.transform.SetParent(transform);
+        subMenuParent.SetActive(false);
+    }
+
+    private GameObject Instantiate(object subMenuPrefab)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void ShowOptions()
+    {
+        subMenuParent.SetActive(true);
+    }
+
+    public void HideOptions()
+    {
+        subMenuParent.SetActive(false);
+    }
+}
+
+
+
+
+
+-----------------------------
+GamePlayMainMenu:
+
+using UnityEngine;
+using System.Collections;
+using Tkt.DungeonMaster.Actions;
+using Tkt.DungeonMaster;
+ 
+public class GameplayMainMenu : MonoBehaviour
+{
+    public GameObject MainMenuParent;
+ 
+    void Awake()
+    {
+        HideMainMenu();
+    }
+ 
+    public void ToggleMainMenu()
+    {
+        MainMenuParent.SetActive(!MainMenuParent.activeSelf);
+    }
+ 
+    public void ShowMainMenu()
+    {
+        MainMenuParent.SetActive(true);
+    }
+ 
+    public void HideMainMenu()
+    {
+        MainMenuParent.SetActive(false);
+    }
+ 
+    public void GoToTown()
+    {
+        Command townCommand = new GoToTownCommand();
+        var localPlayer = FindObjectOfType<LocalPlayerInputProcessor>();
+        localPlayer.SetCommand(townCommand, true);
+    }
+}
+-----------------------------
+Menu:
+
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Menu : MonoBehaviour
+{
+    public SubMenu SubMenuParent;
+    public SubMenu SubMenuPrefab;
+
+    void Awake()
+    {
+        SubMenuParent = Instantiate(SubMenuPrefab);
+        // Make SubMenu a child of this MainMenu.
+        SubMenuParent.transform.SetParent(transform);
+    }
+
+
+    public void ShowSubMenu()
+    {
+        SubMenuParent.SetActive(true);
+    }
+
+    public void HideSubMenu()
+    {
+        SubMenuParent.SetActive(false);
+    }
+}

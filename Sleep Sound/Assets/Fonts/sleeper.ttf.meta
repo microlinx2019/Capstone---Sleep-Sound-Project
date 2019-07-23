@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: c4d96f8d586d4f34cb9c8c9b3eaa94b9
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: sleeper
+  fontNames:
+  - sleeper
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 1a1d20973816c6548b605fe982d6fa31, type: 3}
+  - {fileID: 12800000, guid: 831bdefeef3561b48a2194a2d18d66b2, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
